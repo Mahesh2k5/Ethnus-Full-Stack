@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            width: 150px; /* fixed width for label to align inputs vertically */
+            margin-right: 10px;
+            /* remove display block */
+        }
+        .input {
+            padding: 5px;
+            width: 250px;
+            /* remove display block */
+        }
+        /* For multiple inputs inline */
+        .inline-inputs input {
+            width: 120px;
+            margin-right: 10px;
+        }
+        /* For radio inputs inline */
+        .inline-radio input {
+            width: auto;
+            margin-right: 5px;
+        }
+        textarea.input {
+            width: 250px;
+            height: 80px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body style="display: flex; align-items: flex-start;">
+    <div style="width: fit-content;">
+        <img style="margin-right: 100px;" src="D:\Important Files\VIT\Academics\CODES\Ethnus Full Stack\portrait-positive-female-doctor-writing-notes_13339-32682.jpg">
+    </div>
+
+    <div style="padding-top: 70px; padding-left: 100px;">
+        <h1><b>Doctor Appointment Form</b></h1>
+        <hr style="border: 2px solid blueviolet;">
+
+        <div class="form-row">
+            <label>Appointment Date:</label>
+            <input class="input" type="date" name="date">
+        </div>
+
+        <div class="form-row">
+            <label>Appointment Time:</label>
+            <input class="input" type="time" name="time">
+        </div>
+
+        <div class="form-row inline-inputs">
+            <label>Name:</label>
+            <input type="text" name="first_name" placeholder="First Name">
+            <input type="text" name="last_name" placeholder="Last Name">
+        </div>
+
+        <div class="form-row inline-radio">
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+        </div>
+
+        <div class="form-row">
+            <label>Phone:</label>
+            <input class="input" type="number" name="phone">
+        </div>
+
+        <div class="form-row inline-inputs">
+            <label>Address:</label>
+            <input type="text" name="City" placeholder="City">
+            <input type="text" name="State" placeholder="State">
+        </div>
+
+        <div class="form-row">
+            <label>Your Query:</label>
+            <textarea class="input" name="query"></textarea>
+        </div>
+        
+    </div>
+</body>
+</html>
