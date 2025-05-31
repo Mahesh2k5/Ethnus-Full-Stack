@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta viewport="width=device-width initial-scale=1.0">
+
+<head>
+    <style>
+        .table{
+            border: 1px solid grey;
+            border-collapse: collapse;
+            width: 500px;
+            height: 500px;
+        }
+
+        tr{
+            text-align: center;
+            width: 20px;
+            height: 20px;
+        }
+
+        tr:nth-child(even){
+            background-color: white;
+        }
+
+        tr:nth-child(odd){
+            background-color: whitesmoke;
+        }
+        
+        th{
+           background-color: green;
+           color: white; 
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0; 
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+
+        <tr>
+            <td>alfreds</td>
+            <td>maria anders</td>
+            <td>germany</td>
+        </tr>
+
+        <tr>
+            <td>berglunds</td>
+            <td>christina</td>
+            <td>sweden</td>
+        </tr>
+
+        <tr>
+            <td>centro</td>
+            <td>Francisco</td>
+            <td>mexico</td>
+        </tr>
+
+        <tr>
+            <td>ernst</td>
+            <td>roland</td>
+            <td>austria</td>
+        </tr>
+
+        <tr>
+            <td>island</td>
+            <td>helen</td>
+            <td>UK</td>
+        </tr>
+
+        <tr>
+            <td>koniglich</td>
+            <td>philip</td>
+            <td>germany</td>
+        </tr>
+
+        <tr>
+            <td>winecellars</td>
+            <td>yoshi</td>
+            <td>canada</td>
+        </tr>
+
+        <tr>
+            <td>riuniti</td>
+            <td>giovanni</td>
+            <td>italy</td>
+        </tr>
+    </table>
+</body>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta viewport="width=device-width initial-scale=1.0">
+
+<head>
+    <style>
+        .links{
+            display: flex;
+            width: 80px;
+            height: 50px;
+            background-color: skyblue;
+            align-items: center ;
+            justify-content: center;
+        }
+
+        .link{
+            display: flex;
+            width: 80px;
+            height: 50px;
+            background-color: wheat;
+            align-items: center ;
+            justify-content: center;
+        }
+
+        .links:hover{
+            background-color: goldenrod;
+            color: white;
+        }
+        .link:hover{
+            background-color: grey;
+            color: white;
+        }
+
+        .tab1{
+            border: 1px solid grey;
+            padding: 5px;
+            padding-bottom: 0px;
+        }
+
+        .tab2{
+            border: 1px solid grey;
+            padding: 5px;
+            padding-right: 0px;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner">
+            <div class="tab1" style="display: flex; flex-direction: column;">
+                <div class="links">HOME</div>
+                <div class="links">Java</div>
+                <div class="links">CSS</div>
+                <div class="links">HTML</div>
+                <div class="links">Bootstrap</div>
+            </div>
+        </div>
+
+        <div class="inner">
+            <div class="tab2" style="display: flex; flex-direction: row;">
+                <div class="link">HOME</div>
+                <div class="link">Java</div>
+                <div class="link">CSS</div>
+                <div class="link">HTML</div>
+                <div class="link">Bootstrap</div>
+            </div>
+        </div>
+    </div>
+</body>
