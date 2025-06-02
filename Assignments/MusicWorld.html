@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1;
+        }
+
+        .overlay{
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-image: url(Assets/pexels-photo-1190299.webp);
+            background-repeat: repeat;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .title{
+            padding-left: 80px;
+            border: 2px dotted white;
+            border-radius: 20px ;
+            color: white;
+        }
+
+        .navbar{
+            margin: 5px;
+            display: flex;
+            background-color: rgba(82, 80, 80, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+            gap: 7px;
+        }
+
+        .navs{
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .outer{
+            display: flex;
+            flex-direction: column;
+            border: 2px dotted white;
+            padding: 10px;
+            border-radius: 10px;
+            gap: 8px;
+        }
+
+        .inner{
+            border: 2px dashed white;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .inner1{
+            padding: 6px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .albums{
+            width: 100px;
+            height: 150px;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="overlay">
+        <div class="title">
+            <h1>Music World</h1>
+        </div>
+
+        <div class="navbar">
+            <button class="navs">Home</button>
+            <button class="navs">About Us</button>
+            <button class="navs">Category</button>
+            <button class="navs">Production</button>
+            <button class="navs">Gallery</button>
+            <button class="navs">Contact Us</button>
+            <button class="navs">Login</button>
+        </div>
+
+        <div class="outer">
+            <div class="inner">
+                <span style="font-size: 25px; padding-left: 20px; color: white;">Lastest Albums...</span>
+                <hr>
+                <div class="inner1">
+                    <div class="albums"><img src="Assets/MV5BMjMyNzQ0MTAxNl5BMl5BanBnXkFtZTgwMDY2NjM4MzE@._V1_.jpg"></div>
+                    <div class="albums"><img src="Assets/1036628-premalu-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/1055492-sapta-sagaradaache-ello-side-b-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/1134265-mathu-vadalara-2-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/261352-yevade-subramanyam-0-1000-0-1500-crop.jpg"></div>
+                </div>
+            </div>
+
+
+            <div class="inner">
+                <span style="font-size: 25px; padding-left: 20px; color: white;">Top 10 Songs</span>
+                <hr>
+                <div class="inner1">
+                    <div class="albums"><img src="Assets/690698-salaar-part-1-ceasefire-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/700603-animal-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/853733-leo-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/895539-keedaa-cola-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/963481-hi-nanna-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/978008-aavesham-0-1000-0-1500-crop.jpg"></div>
+                </div>
+            </div>
+
+
+            <div class="inner">
+                <span style="font-size: 25px; padding-left: 20px; color: white;">Top 10 Artists</span>
+                <hr>
+                <div class="inner1">
+                    <div class="albums"><img src="Assets/1055492-sapta-sagaradaache-ello-side-b-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/700603-animal-0-1000-0-1500-crop.jpg"></div>
+                    <div class="albums"><img src="Assets/963481-hi-nanna-0-1000-0-1500-crop.jpg"></div>
+            </div>
+        </div>
+    </div>
+</body>
