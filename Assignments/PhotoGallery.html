@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <style>
+        body{
+            margin: 0;
+            background-color:whitesmoke;
+            padding: 25px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title{
+            font-size: 24px;
+            padding: 5px;
+            width: 100%;
+            height: auto;
+            background-color: black;
+            color: whitesmoke;
+            border-radius: 10px;
+            border: 1px solid yellow;
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+            overflow:scroll;
+            width: 70%;
+            scrollbar-width:none;
+            border: 2px solid black;
+            border-top: 7px solid black;
+            padding: 10px
+        }
+
+        .column{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .row{
+            display: flex;
+            gap: 5px;
+        }
+
+        .item{
+            height: 150px;
+            width: 150px;
+            border: 1px solid black;
+            border-radius: 15px;
+            padding: 1px;
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <span>Photo Gallery</span>
+    </div><br>
+
+    <div class="container">
+        <div class="column">
+            <div class="row">
+            <div class="item"><img src="Assets/erasebg-transformed.webp"></div>
+            <div class="item"><img src="Assets/1055492-sapta-sagaradaache-ello-side-b-0-1000-0-1500-crop.jpg"></div>
+            <div class="item"><img src="Assets/700603-animal-0-1000-0-1500-crop.jpg"></div>
+            <div class="item"></div>
+        </div>
+
+        <div class="column">
+            <div class="row">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"><img src="Assets/MV5BMjMyNzQ0MTAxNl5BMl5BanBnXkFtZTgwMDY2NjM4MzE@._V1_.jpg"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+        
+    </div>
+</body>
