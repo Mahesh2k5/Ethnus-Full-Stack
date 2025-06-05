@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    .headings {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 16.5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+    // Array Declaration
+    let arr = [2, true, "Uma Mahesh", 4.5, false, 3, 5, "SRH"];
+    document.write('<span class="headings">Array functions in JS:</span><br><br>');
+    document.write('<span>Initial Array: </span>' + arr + "<br><br>");
+
+    // POP() Function
+    document.write('<span class="headings">POP() Function in Arrays:</span><br><br>');
+    document.write('<span>Poped End Value: </span>' + arr.pop() + "<br>");
+    document.write('<span>Array after pop() function: </span>' + arr + "<br><br><br><br>");
+
+    // PUSH() Function
+    document.write('<span class="headings">PUSH() Function in Arrays:</span><br><br>');
+    arr.push("CSK");
+    document.write('<span>Array after push() function: </span>' + arr + "<br><br><br><br>");
+
+    // REVERSE() Function
+    document.write('<span class="headings">REVERSE() Function in Arrays:</span><br><br>');
+    arr.reverse();
+    document.write('<span>Array after push() function: </span>' + arr + "<br><br><br><br>");
+
+    function test(arr) {
+      return arr > 8;
+    }
+
+    // SOME() Function
+    document.write('<span class="headings">SOME() Function in Arrays:</span><br><br>');
+    document.write('<span>Is any value > 8? </span>' + arr.some(test) + "<br><br><br><br>");
+
+    // SHIFT() Function
+    document.write('<span class="headings">SHIFT() Function in Arrays:</span><br><br>');
+    document.write('<span>Removed front value: </span>' + arr.shift() + "<br>");
+    document.write('<span>Array after shift() function: </span>' + arr + "<br><br><br><br>");
+
+    // SLICE() Function
+    document.write('<span class="headings">SLICE() Function in Arrays:</span><br><br>');
+    document.write('<span>Slicing from index 2 to 4: </span>' + arr.slice(2, 5) + "<br><br><br><br>");
+
+    // SORT() Function
+    document.write('<span class="headings">SORT() Function in Arrays:</span><br><br>');
+    arr.sort();
+    document.write('<span>Array after sorting: </span>' + arr + "<br><br><br><br>");
+  </script>
+</body>
+</html>
