@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+      
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    td, th {
+      border: 1px solid #999;
+      padding: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+    }
+
+    input[type="number"] {
+      width: 70%;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+
+<body>
+    <div>
+      <h2>Prime Number Generator</h2>
+      <table>
+        <tr>
+          <td>Start</td>
+          <td><input id="start" type="number" /></td>
+        </tr>
+        <tr>
+          <td>End</td>
+          <td><input id="end" type="number" /></td>
+        </tr>
+        <tr>
+          <td>Prime Numbers in Range</td>
+          <td><textarea id="primes" rows="4" readonly></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:center;">
+            <button onclick="calculatePrime()">Generate</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function calculatePrime() {
+        let start=document.getElementById("start");
+        let end=document.getElementById("end");
+        let primes=document.getElementById("primes");
+
+        let s=Number(start.value);
+        let e=Number(end.value);
+
+        primes.value="";
+
+        for(let m=s;m<=e;m++){
+          if(primecheck(m)){
+            primes.value += m + " ";
+          }
+        }
+      }
+
+      function primecheck(n){
+        if(n<2) return false;
+
+        for(let k=2;k<=Math.sqrt(n);k++){
+          if(n%k===0){
+            return false;
+          }
+        }
+        return true;
+      }
+    </script>
+</body>
+</html>

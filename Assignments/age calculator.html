@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: rgb(126, 35, 255);
+        }
+
+        .years,.months,.days{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+            border-radius: 4px;
+            box-shadow: 2px 2px 3px;
+            font-size: larger;
+        }
+
+        .container{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            gap: 20px;
+        }
+
+        .input{
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: aliceblue;
+            width: 400px;
+            box-shadow: 2px 2px;
+        }
+
+        input{
+            border-radius: 3px;
+            background-color: rgb(249, 246, 241);
+            text-transform: uppercase;
+        }
+
+        button{
+            background-color: rgb(157, 94, 247);
+            border-radius: 3px;
+
+        }
+
+        .before{
+            font-weight: 500;
+        }
+
+        .holder{
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 1000;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+    <h1>Age Calculator</h1>
+
+    <div class="input">
+        <input type="date" id="date">
+        <button onclick="return calculate()">Calculate</button><br><br>
+    </div>
+
+    <div class="container">
+        <div class="years" id="years"><span class="holder" id="holder1"></span> <span class="before">Years</span></div>
+        <div class="months" id="months"><span class="holder" id="holder2"></span><span class="before">Months</span></div>
+        <div class="days" id="days"><span class="holder" id="holder3"></span><span class="before">Days</span></div>
+    </div>
+
+    <script>
+        function calculate(){
+            const input=document.getElementById("date").value;
+        
+            const birthdate=new Date(input);
+            const currdate=new Date();
+            
+            let years=-birthdate.getFullYear()+currdate.getFullYear();
+            let months=-birthdate.getMonth()+currdate.getMonth();
+            let days=-birthdate.getDate()+currdate.getDate();
+
+            if (days < 0) {
+                months--;
+                days += new Date(currdate.getFullYear(), currdate.getMonth(), 0).getDate();
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            document.getElementById("holder1").textContent=`${years}`;
+            document.getElementById("holder2").textContent=`${months}`;
+            document.getElementById("holder3").textContent=`${days}`;
+        }
+    </script>
+</body>
+</html>
