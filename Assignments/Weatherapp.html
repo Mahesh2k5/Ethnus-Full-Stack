@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outercont{
+            display: flex;
+        }
+
+        .inner{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            gap:10px
+        }
+
+        input{
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+        }
+
+        h2,h3,p{
+            margin: 9px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Weather App</h1>
+    <div class="outercont">
+        <div>
+            <h2 id="temp"></h2>
+            <h3 id="city"></h3>
+            <h3 id="datetime"></h3>
+            <p id="description"></p>
+        </div>
+
+        <div class="inner">
+            <input type="text" id="cityInput">
+            <button onclick="getWeather()">Search</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        const API_KEY = "68f7dbf4ede542c51450b0b7ce36b682";
+
+        function formatDateTime(timezoneOffsetInSeconds) {
+            const nowUTC = new Date(Date.now() + new Date().getTimezoneOffset() * 60000); // get UTC time
+            const localTime = new Date(nowUTC.getTime() + timezoneOffsetInSeconds * 1000);
+            
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const day = days[localTime.getDay()];
+            const hours = localTime.getHours().toString().padStart(2, "0");
+            const minutes = localTime.getMinutes().toString().padStart(2, "0");
+            
+            return `${hours}:${minutes} ${day}`;
+        }
+
+        async function getWeather() {
+            const city = document.getElementById("cityInput").value.trim();
+            if (!city) return;
+
+            const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
+            const geoRes = await fetch(geoUrl);
+            const geoData = await geoRes.json();
+
+            if (geoData.length === 0) {
+                alert("City not found.");
+                return;
+            }
+
+            const { lat, lon, name } = geoData[0];
+
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+            const weatherRes = await fetch(weatherUrl);
+            const weatherData = await weatherRes.json();
+
+            document.getElementById("temp").textContent = Math.round(weatherData.main.temp) + "°C";
+            document.getElementById("city").textContent = name;
+            document.getElementById("datetime").textContent = formatDateTime(weatherData.timezone);
+            document.getElementById("description").textContent = weatherData.weather[0].description;
+        }
+    </script>
+
+</body>
+</html>

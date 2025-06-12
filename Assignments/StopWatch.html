@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <span id="display"></span>
+
+    <button onclick="gettime()">Click Me</button>
+    <button onclick="stop()">Stop</button>
+
+    <script>
+        let timerId = null;
+
+        function updateTime() {
+            const display = document.getElementById("display");
+            const date = new Date();
+            display.textContent = date.toString();
+        }
+
+        function gettime() {
+            if (!timerId) {
+                updateTime(); // immediate update
+                timerId = setInterval(updateTime, 1000);
+            }
+        }
+
+        function stop() {
+            clearInterval(timerId);
+            timerId = null;
+        }
+    </script>
+</body>
+</html>

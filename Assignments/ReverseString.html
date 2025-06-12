@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>String Reverse</h1>
+    <div>
+        <label>Enter String</label>
+        <input type="text" placeholder="Enter String" id="str">
+    </div>
+    <button id="button" onclick="reverse()">Reverse</button>
+    <span id="display"></span>
+
+    <script>
+        function reverse(){
+            var str = document.getElementById("str").value;
+            var revstr = str.split("").reverse().join("");
+
+            var display=document.getElementById("display");
+            display.innerHTML="";
+            display.textContent=revstr;
+        }
+    </script>
+
+</body>
+</html>

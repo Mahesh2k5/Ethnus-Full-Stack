@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            width: 50px;
+            margin-right: 10px;
+        }
+        .form-group input {
+            min-width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age">
+    </div>
+
+    <button onclick="save()">Save</button>
+    <button onclick="load()">Load</button>
+
+
+    <script>
+        function save() {
+            let name = document.getElementById("name");
+            let age = document.getElementById("age");
+            localStorage.setItem("age",age.value);
+            localStorage.setItem("name",name.value);
+        }
+
+        function load(){
+            const name = document.getElementById("name");
+            const age = document.getElementById("age");
+
+            name.value = localStorage.getItem("name");
+            age.value = localStorage.getItem("age");
+        }
+    </script>
+</body>
+</html>

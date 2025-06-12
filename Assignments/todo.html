@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body> 
+    <h1>To Do List</h1>
+    <input id="input" type="text" placeholder="add a new task">
+    <button onclick="addTask()">Add</button>
+    <div class="container"></div>
+
+    <script>
+        function addTask(){
+            const input = document.getElementById("input");
+            const container = document.querySelector(".container");
+
+            const child=document.createElement("div");
+            child.style.display = "flex";
+            child.style.margin = "5px 0";
+            child.style.padding = "5px";
+            child.style.borderRadius = "5px";
+            child.style.justifyContent = "space-between";
+            child.style.backgroundColor = "whitesmoke";
+
+            const span = document.createElement("span");
+            span.textContent = input.value;
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.style.backgroundColor = "red";
+            deleteBtn.style.color = "white";
+            deleteBtn.style.border = "none";
+            deleteBtn.style.borderRadius = "5px";
+            deleteBtn.onclick = function () {
+                container.removeChild(child);
+            };
+
+            child.appendChild(span);
+            child.appendChild(deleteBtn);
+            container.appendChild(child);
+
+            input.value = ""; // clear input
+        }
+    </script>
+</body>
+</html>
